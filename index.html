@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Felices 20 Años, Mi Niña Amada! ✨ Con Todo Mi Amor</title>
+
+  <!-- Tipografías de alta gama -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-cream: #FAF7F2;
+      --bg-card: rgba(255, 255, 255, 0.92);
+      --gold-light: #F6E7B9;
+      --gold-primary: #D4AF37;
+      --gold-dark: #A77B1B;
+      --rose-soft: #FDEEEB;
+      --rose-blush: #E8998D;
+      --rose-deep: #B44654;
+      --dark-warm: #2C2623;
+      --text-muted: #665C54;
+      --film-border: #141414;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 8%, #FFFFFF 0%, #FAF7F2 42%, #F3EAE0 100%);
+      color: var(--dark-warm);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Brillos dorados flotantes */
+    .sparkle-particle {
+      position: absolute;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.9) 0%, rgba(255, 240, 200, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) scale(0.3);
+        opacity: 0;
+      }
+      30% { opacity: 0.75; }
+      80% { opacity: 0.9; }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* Widget Flotante de Música */
+    .music-widget {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 40px;
+      padding: 8px 18px;
+      box-shadow: 0 8px 24px rgba(167, 123, 27, 0.15);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .music-widget:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(167, 123, 27, 0.22);
+    }
+    .music-widget.playing .music-icon {
+      animation: gentleRotate 3.5s linear infinite;
+      color: var(--gold-dark);
+    }
+    .music-icon {
+      font-size: 15px;
+      color: var(--gold-dark);
+      transition: color 0.3s;
+    }
+    .music-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--dark-warm);
+    }
+
+    @keyframes gentleRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Encabezado */
+    .hero-header {
+      text-align: center;
+      padding: 95px 20px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge-dedication {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(232, 153, 141, 0.15);
+      border: 1px solid rgba(232, 153, 141, 0.45);
+      color: var(--rose-deep);
+      padding: 7px 20px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .script-title {
+      font-family: 'Alex Brush', cursive;
+      font-size: clamp(3rem, 7.5vw, 5rem);
+      color: var(--gold-dark);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .main-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.3rem, 5.8vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--dark-warm);
+      line-height: 1.16;
+      margin-bottom: 24px;
+    }
+
+    .main-title span {
+      background: linear-gradient(135deg, #A77B1B, #D4AF37 45%, #C85A6A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 30px;
+      line-height: 1.65;
+    }
+
+    /* Pergamino 'Soy princesa de mami' */
+    .princess-quote-banner {
+      background: linear-gradient(135deg, #FFF9F7 0%, #FDF1ED 100%);
+      border: 1px solid rgba(232, 153, 141, 0.45);
+      border-left: 6px solid var(--rose-blush);
+      border-radius: 18px;
+      padding: 24px 30px;
+      max-width: 760px;
+      margin: 25px auto 0;
+      box-shadow: 0 12px 35px rgba(232, 153, 141, 0.14);
+      text-align: center;
+      position: relative;
+    }
+    .princess-quote-banner p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.22rem, 3.2vw, 1.6rem);
+      font-weight: 600;
+      color: var(--rose-deep);
+      letter-spacing: 0.4px;
+      line-height: 1.45;
+    }
+    .princess-quote-banner span {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: 9px;
+      font-style: normal;
+    }
+
+    /* Secciones comunes */
+    .section-container {
+      max-width: 1100px;
+      margin: 75px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .section-subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 12.5px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.85rem, 4.2vw, 2.7rem);
+      color: var(--dark-warm);
+      margin-top: 7px;
+    }
+
+    .title-separator {
+      width: 65px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      margin: 15px auto 0;
+    }
+
+    /* Tarjetas de Frases de Mamá */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 32px;
+    }
+
+    .quote-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      padding: 40px 32px;
+      border-radius: 24px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 12px 35px rgba(44, 38, 35, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+      position: relative;
+    }
+    .quote-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(167, 123, 27, 0.16);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+    .quote-mark {
+      font-family: 'Cinzel', serif;
+      font-size: 52px;
+      color: rgba(212, 175, 55, 0.3);
+      line-height: 1;
+      margin-bottom: -18px;
+    }
+    .quote-card p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.22rem;
+      line-height: 1.68;
+      color: #352C28;
+      margin-bottom: 25px;
+    }
+    .quote-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(212, 175, 55, 0.18);
+      padding-top: 18px;
+    }
+    .quote-card-footer i {
+      color: var(--rose-blush);
+      font-size: 16px;
+    }
+    .quote-card-footer span {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    /* Galería Fotográfica: Retro Film & Polaroid */
+    .film-outer {
+      background: var(--film-border);
+      border-radius: 26px;
+      padding: 35px 25px 45px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+      position: relative;
+      border-top: 14px solid var(--film-border);
+      border-bottom: 14px solid var(--film-border);
+      margin-bottom: 75px;
+    }
+    .film-outer::before, .film-outer::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      height: 8px;
+      background: repeating-linear-gradient(
+        90deg,
+        #FFF,
+        #FFF 12px,
+        transparent 12px,
+        transparent 24px
+      );
+    }
+    .film-outer::before { top: -11px; }
+    .film-outer::after { bottom: -11px; }
+
+    .film-header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #A0988E;
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+      padding: 0 10px;
+    }
+
+    .polaroid-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .polaroid-item {
+      background: #FFFFFF;
+      padding: 14px 14px 22px;
+      border-radius: 8px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      transform: rotate(var(--rot, 0deg));
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .polaroid-item:nth-child(1) { --rot: -1.6deg; }
+    .polaroid-item:nth-child(2) { --rot: 1.4deg; }
+    .polaroid-item:nth-child(3) { --rot: -1deg; }
+
+    .polaroid-item:hover {
+      transform: scale(1.04) rotate(0deg);
+      z-index: 10;
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65);
+    }
+
+    .polaroid-img-wrapper {
+      position: relative;
+      height: 370px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #23201E;
+    }
+
+    .polaroid-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .polaroid-item:hover .polaroid-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .polaroid-zoom-hint {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.68);
+      color: #FFF;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 11px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: all 0.3s ease;
+    }
+    .polaroid-item:hover .polaroid-zoom-hint {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .polaroid-caption {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #38302B;
+      text-align: center;
+      margin-top: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Reproductor de Video Conmemorativo */
+    .video-showcase {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 16px 45px rgba(44, 38, 35, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      max-width: 900px;
+      margin: 0 auto 80px;
+    }
+
+    .video-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0E0C0A;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      display: block;
+      outline: none;
+    }
+
+    .video-caption {
+      text-align: center;
+      padding-top: 22px;
+    }
+    .video-caption h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: var(--dark-warm);
+      margin-bottom: 6px;
+    }
+    .video-caption p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Sección 'Enviar Abrazo de Mamá' */
+    .hug-hero-card {
+      background: linear-gradient(135deg, #FFFDFB 0%, #FFF5F2 100%);
+      border: 1px solid rgba(232, 153, 141, 0.38);
+      border-radius: 32px;
+      padding: 50px 30px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 90px;
+      box-shadow: 0 20px 50px rgba(232, 153, 141, 0.14);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hug-button {
+      background: linear-gradient(135deg, #E85A6F 0%, #E8998D 50%, #D4AF37 100%);
+      color: #FFF;
+      border: none;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: 0 14px 32px rgba(232, 90, 111, 0.4);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      outline: none;
+      margin: 25px 0 16px;
+      animation: heartbeat 2.6s infinite ease-in-out;
+    }
+    .hug-button:hover {
+      transform: scale(1.12);
+      box-shadow: 0 18px 42px rgba(232, 90, 111, 0.55);
+    }
+    .hug-button:active {
+      transform: scale(0.96);
+    }
+    .hug-button i {
+      font-size: 34px;
+    }
+    .hug-button span {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.08); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.12); }
+      70% { transform: scale(1); }
+    }
+
+    .hug-counter-badge {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid rgba(232, 153, 141, 0.32);
+      padding: 10px 26px;
+      border-radius: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      margin-top: 10px;
+    }
+    .hug-counter-num {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--rose-deep);
+    }
+    .hug-counter-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* Modal Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 16, 15, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-modal {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      background: #FFFFFF;
+      padding: 16px 16px 24px;
+      border-radius: 16px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      animation: modalZoom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalZoom {
+      0% { transform: scale(0.92); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .lightbox-modal img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      background: #000;
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 38px;
+      height: 38px;
+      background: var(--gold-dark);
+      color: #FFF;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+    }
+    .lightbox-close-btn:hover {
+      transform: scale(1.1);
+    }
+    .lightbox-desc {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--dark-warm);
+    }
+
+    /* Pie de Página */
+    footer {
+      text-align: center;
+      padding: 60px 20px 50px;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(212, 175, 55, 0.22);
+    }
+    .footer-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--dark-warm);
+      margin-bottom: 12px;
+    }
+    .footer-sign {
+      font-family: 'Alex Brush', cursive;
+      font-size: 2.3rem;
+      color: var(--gold-dark);
+    }
+    .footer-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 640px) {
+      .hero-header { padding-top: 80px; }
+      .quote-card { padding: 32px 24px; }
+      .video-showcase { padding: 18px; }
+      .polaroid-img-wrapper { height: 320px; }
+      .music-widget {
+        top: 14px;
+        right: 14px;
+        padding: 6px 14px;
+      }
+      .music-label { font-size: 11.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Partículas de destellos dorados -->
+  <div id="sparkle-container"></div>
+
+  <!-- Botón de Melodía Acústica -->
+  <button class="music-widget" id="musicToggleBtn" onclick="toggleMelodia()">
+    <i class="fa-solid fa-music music-icon" id="musicIcon"></i>
+    <span class="music-label" id="musicLabel">Melodía</span>
+  </button>
+
+  <!-- Encabezado Principal y Dedicatoria -->
+  <header class="hero-header">
+    <div class="badge-dedication">
+      <i class="fa-solid fa-heart"></i>
+      <span>De Mamá Para Ti • 20 Primaveras</span>
+      <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <div class="script-title">Felices 20 Años</div>
+    <h1 class="main-title">Hija de Mi <span>Corazón</span></h1>
+
+    <p class="hero-tagline">
+      Hoy el universo entero celebra el día en que tu luz llegó a iluminar mi existencia.
+    </p>
+
+    <!-- Pergamino de Cita Emotiva -->
+    <div class="princess-quote-banner">
+      <p>“Soy princesa de mami, sobreviviendo a miles de kilómetros de mi mami ❤️”</p>
+      <span>Sin importar cuántos horizontes nos separen, mi abrazo camina siempre a tu lado.</span>
+    </div>
+  </header>
+
+  <!-- Sección de Frases de la Madre -->
+  <main class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Palabras del Alma</span>
+      <h2 class="section-title">Lo Que Mi Corazón te Dice Hoy</h2>
+      <div class="title-separator"></div>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Frase 1 -->
+      <article class="quote-card">
+        <div>
+          <div class="quote-mark">“</div>
+          <p>Hija, aunque la distancia hoy nos separe, mi amor te abraza siempre. Feliz 20 años, mi vida . Sigue brillando, estoy orgullosa de ti</p>
+        </div>
+        <div class="quote-card-footer">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>Siempre Contigo</span>
+        </div>
+      </article>
+
+      <!-- Frase 2 -->
+      <article class="quote-card">
+        <div>
+          <div class="quote-mark">“</div>
+          <p>Gracias por enseñarme tanto con tu valentia. Te extraño, pero celebro tu camino</p>
+        </div>
+        <div class="quote-card-footer">
+          <i class="fa-solid fa-compass"></i>
+          <span>Orgullo Infinito</span>
+        </div>
+      </article>
+
+      <!-- Frase 3 -->
+      <article class="quote-card">
+        <div>
+          <div class="quote-mark">“</div>
+          <p>Que este nuevo año te traiga paz, risa y personas que te hagan sentir en casa, donde sea que estes.</p>
+        </div>
+        <div class="quote-card-footer">
+          <i class="fa-solid fa-dove"></i>
+          <span>Deseos de Paz y Alegría</span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Galería Fotográfica: Estilo Retro Film -->
+  <section class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">Nuestros Tesoros</span>
+      <h2 class="section-title">Instantes Grabados en la Memoria</h2>
+      <div class="title-separator"></div>
+    </div>
+
+    <div class="film-outer">
+      <div class="film-header-meta">
+        <span>RETRO FILM • MEMORIES</span>
+        <span>20 YEARS OF LOVE</span>
+      </div>
+
+      <div class="polaroid-grid">
+        <!-- Foto 1: Foto graduacion.jpeg -->
+        <div class="polaroid-item" onclick="abrirLightbox('Foto graduacion.jpeg', 'Juntas en tus grandes victorias ✨🎓')">
+          <div class="polaroid-img-wrapper">
+            <img src="Foto graduacion.jpeg" alt="Juntas en tus grandes victorias" onerror="this.onerror=null; this.src='https://placehold.co/600x800/FAF7F2/A77B1B?text=Foto+graduacion.jpeg'">
+            <span class="polaroid-zoom-hint"><i class="fa-solid fa-expand"></i> Ampliar</span>
+          </div>
+          <div class="polaroid-caption">Juntas en tus grandes victorias</div>
+        </div>
+
+        <!-- Foto 2: Foto pelais.jpeg -->
+        <div class="polaroid-item" onclick="abrirLightbox('Foto pelais.jpeg', 'Dulzura familiar 💖👶')">
+          <div class="polaroid-img-wrapper">
+            <img src="Foto pelais.jpeg" alt="Dulzura familiar" onerror="this.onerror=null; this.src='https://placehold.co/600x800/FAF7F2/A77B1B?text=Foto+pelais.jpeg'">
+            <span class="polaroid-zoom-hint"><i class="fa-solid fa-expand"></i> Ampliar</span>
+          </div>
+          <div class="polaroid-caption">Dulzura familiar</div>
+        </div>
+
+        <!-- Foto 3: Foto cena.jpeg -->
+        <div class="polaroid-item" onclick="abrirLightbox('Foto cena.jpeg', 'Sabor a hogar y risas 🍽️💛')">
+          <div class="polaroid-img-wrapper">
+            <img src="Foto cena.jpeg" alt="Sabor a hogar y risas" onerror="this.onerror=null; this.src='https://placehold.co/600x800/FAF7F2/A77B1B?text=Foto+cena.jpeg'">
+            <span class="polaroid-zoom-hint"><i class="fa-solid fa-expand"></i> Ampliar</span>
+          </div>
+          <div class="polaroid-caption">Sabor a hogar y risas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reproductor de Video Conmemorativo -->
+  <section class="section-container">
+    <div class="video-showcase">
+      <div class="video-container">
+        <video controls poster="Foto graduacion.jpeg" playsinline preload="metadata">
+          <source src="Video.mov" type="video/quicktime">
+          <source src="Video.mov" type="video/mp4">
+          Tu navegador o dispositivo reproduce el video directamente al estar en la misma carpeta.
+        </video>
+      </div>
+      <div class="video-caption">
+        <h4>El Viaje de Tu Vida</h4>
+        <p>Desde la orilla del mar hasta cada rincón donde dejas tu huella, siempre serás mi niña.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Interactiva: Enviar Abrazo de Mamá -->
+  <section class="section-container">
+    <div class="hug-hero-card">
+      <span class="section-subtitle" style="color: var(--rose-blush);">Amor sin Distancias</span>
+      <h3 style="font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3.6vw, 2.3rem); color: var(--dark-warm); margin-top: 5px;">
+        Un Abrazo al Corazón
+      </h3>
+      <p style="color: var(--text-muted); font-size: 15px; max-width: 500px; margin: 10px auto 0;">
+        Toca el corazón para enviar un cálido abrazo que cruce cualquier frontera:
+      </p>
+
+      <button class="hug-button" onclick="enviarAbrazo(event)">
+        <i class="fa-solid fa-heart"></i>
+        <span>Abrazar</span>
+      </button>
+
+      <div>
+        <div class="hug-counter-badge">
+          <span class="hug-counter-num" id="hugCounter">120</span>
+          <span class="hug-counter-text">abrazos de mamá llenos de bendiciones</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Lightbox para Ampliar Fotos -->
+  <div class="lightbox-overlay" id="lightboxModal" onclick="cerrarLightbox(event)">
+    <div class="lightbox-modal" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="cerrarLightbox(event)">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="Fotografía en detalle">
+      <div class="lightbox-desc" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- Pie de Página Emotivo -->
+  <footer>
+    <p class="footer-quote">“Nunca olvides de dónde vienes ni todo lo que vales.”</p>
+    <div class="footer-sign">Mamá</div>
+    <div class="footer-sub">20 Años Guiando Mi Vida • Siempre Juntas</div>
+  </footer>
+
+  <script>
+    /* ====================================================================
+       1. GENERADOR DE DESTELLOS FLOTANTES
+       ==================================================================== */
+    function iniciarDestellos() {
+      const container = document.getElementById('sparkle-container');
+      const total = 22;
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'sparkle-particle';
+        const size = Math.random() * 6 + 3;
+        dot.style.width = size + 'px';
+        dot.style.height = size + 'px';
+        dot.style.left = Math.random() * 100 + 'vw';
+        dot.style.animationDuration = (Math.random() * 10 + 9) + 's';
+        dot.style.animationDelay = (Math.random() * 8) + 's';
+        container.appendChild(dot);
+      }
+    }
+
+    /* ====================================================================
+       2. EFECTOS DE CONFETI CELEBRATORIO
+       ==================================================================== */
+    function lanzarConfetiCelebracion(xOrigin = 0.5, yOrigin = 0.6) {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 75,
+          spread: 70,
+          origin: { x: xOrigin, y: yOrigin },
+          colors: ['#D4AF37', '#F6E7B9', '#E8998D', '#FDEEEB', '#FAF7F2']
+        });
+      }
+    }
+
+    /* ====================================================================
+       3. INTERACCIÓN DE ABRAZOS AL CORAZÓN
+       ==================================================================== */
+    let totalAbrazos = parseInt(localStorage.getItem('bday_hugs_20') || '120', 10);
+    const counterElement = document.getElementById('hugCounter');
+    counterElement.textContent = totalAbrazos.toLocaleString();
+
+    function enviarAbrazo(event) {
+      totalAbrazos++;
+      localStorage.setItem('bday_hugs_20', totalAbrazos);
+      counterElement.textContent = totalAbrazos.toLocaleString();
+
+      const rect = event.target.getBoundingClientRect();
+      const x = (rect.left + rect.width / 2) / window.innerWidth;
+      const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 32,
+          spread: 60,
+          startVelocity: 25,
+          origin: { x: x, y: y },
+          colors: ['#E85A6F', '#E8998D', '#D4AF37', '#FFA0B0']
+        });
+      }
+    }
+
+    /* ====================================================================
+       4. LIGHTBOX
+       ==================================================================== */
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    const modalCaption = document.getElementById('lightboxCaption');
+
+    function abrirLightbox(src, caption) {
+      modalImg.src = src;
+      modalCaption.textContent = caption;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarLightbox(e) {
+      if (e) e.stopPropagation();
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        cerrarLightbox();
+      }
+    });
+
+    /* ====================================================================
+       5. MELODÍA ESTILO CAJITA DE MÚSICA CON WEB AUDIO API
+       ==================================================================== */
+    let audioContext = null;
+    let isPlaying = false;
+    let sequenceTimeout = null;
+
+    const FREQ = {
+      C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23,
+      G4: 392.00, A4: 440.00, Bb4: 466.16, B4: 493.88,
+      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46
+    };
+
+    const MELODIA_NOTAS = [
+      { n: 'C4', d: 0.35, p: 0.1 },
+      { n: 'C4', d: 0.35, p: 0.1 },
+      { n: 'D4', d: 0.65, p: 0.1 },
+      { n: 'C4', d: 0.65, p: 0.1 },
+      { n: 'F4', d: 0.65, p: 0.1 },
+      { n: 'E4', d: 1.15, p: 0.35 },
+
+      { n: 'C4', d: 0.35, p: 0.1 },
+      { n: 'C4', d: 0.35, p: 0.1 },
+      { n: 'D4', d: 0.65, p: 0.1 },
+      { n: 'C4', d: 0.65, p: 0.1 },
+      { n: 'G4', d: 0.65, p: 0.1 },
+      { n: 'F4', d: 1.15, p: 0.35 },
+
+      { n: 'C4', d: 0.35, p: 0.1 },
+      { n: 'C4', d: 0.35, p: 0.1 },
+      { n: 'C5', d: 0.65, p: 0.1 },
+      { n: 'A4', d: 0.65, p: 0.1 },
+      { n: 'F4', d: 0.65, p: 0.1 },
+      { n: 'E4', d: 0.65, p: 0.1 },
+      { n: 'D4', d: 1.05, p: 0.35 },
+
+      { n: 'Bb4', d: 0.35, p: 0.1 },
+      { n: 'Bb4', d: 0.35, p: 0.1 },
+      { n: 'A4', d: 0.65, p: 0.1 },
+      { n: 'F4', d: 0.65, p: 0.1 },
+      { n: 'G4', d: 0.65, p: 0.1 },
+      { n: 'F4', d: 1.4,  p: 1.5 }
+    ];
+
+    function sonarCampanita(frecuencia, duracion) {
+      if (!audioContext || !isPlaying) return;
+      try {
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(frecuencia, audioContext.currentTime);
+
+        const now = audioContext.currentTime;
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.18, now + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + duracion);
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.start(now);
+        osc.stop(now + duracion);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function reproducirPaso(indice = 0) {
+      if (!isPlaying) return;
+      if (indice >= MELODIA_NOTAS.length) {
+        sequenceTimeout = setTimeout(() => reproducirPaso(0), 1200);
+        return;
+      }
+      const item = MELODIA_NOTAS[indice];
+      sonarCampanita(FREQ[item.n], item.d);
+      sequenceTimeout = setTimeout(() => {
+        reproducirPaso(indice + 1);
+      }, (item.d + item.p) * 1000);
+    }
+
+    function toggleMelodia() {
+      const widget = document.getElementById('musicToggleBtn');
+      const label = document.getElementById('musicLabel');
+
+      if (!audioContext) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        audioContext = new AudioCtx();
+      }
+
+      if (audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+
+      isPlaying = !isPlaying;
+
+      if (isPlaying) {
+        widget.classList.add('playing');
+        label.textContent = "Melodía Sonando ✨";
+        reproducirPaso(0);
+        lanzarConfetiCelebracion();
+      } else {
+        widget.classList.remove('playing');
+        label.textContent = "Melodía";
+        if (sequenceTimeout) clearTimeout(sequenceTimeout);
+      }
+    }
+
+    /* ====================================================================
+       6. INICIALIZACIÓN
+       ==================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      iniciarDestellos();
+      setTimeout(() => {
+        lanzarConfetiCelebracion(0.5, 0.4);
+      }, 700);
+    });
+  </script>
+</body>
+</html>
